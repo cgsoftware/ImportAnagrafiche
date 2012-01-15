@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_importanagrafiche" model="ir.ui.view">
+            <field name="name">Importa Anagrafiche </field>
+            <field name="model">import.anagrafiche</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Importa Anagrafiche da Altre Procedure">
+                    <group col="4">
+                        <group colspan="4" >
+						<field name='clienti_base'/>
+						<field name='fornitori_base'/>
+						<newline></newline>
+<field name='clienti_indirizzi_base'/>
+<field name='fornitori_indirizzi_base'/>
+	<newline></newline>
+<field name='des_dive_cli'/>
+<field name='banche'/>
+	<newline></newline>
+<field name='pagamenti'/>
+<field name='piacont'/>
+	<newline></newline>
+                                                
+                                                
+                            <field name='data'/>
+                            <newline />
+                            <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                            <button icon="gtk-ok" name="run_auto_import" string="Importa" type="object"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+       <act_window name="Importa Anagrafiche"
+            res_model="import.anagrafiche"
+            src_model="res.partner"
+            view_mode="form"
+            target="new"
+            key2="client_action_multi"
+            id="action_wizard_importaanagrafiche"
+            view_id='wizard_importanagrafiche'/>
+      </data>
+</openerp>
